@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -28,12 +28,12 @@ namespace mvc_filmy
     {
       services.Configure<CookiePolicyOptions>(options =>
       {
-              // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-              options.CheckConsentNeeded = context => true;
+        // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+        options.CheckConsentNeeded = context => true;
         options.MinimumSameSitePolicy = SameSiteMode.None;
       });
-      services.AddDbContext<MvcFilmyKontekst>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+      services.AddDbContext<FilmyKontekst>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
     }

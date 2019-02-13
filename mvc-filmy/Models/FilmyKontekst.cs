@@ -2,9 +2,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace mvc_filmy.Models
 {
-  public class MvcFilmyKontekst : DbContext
+  public class FilmyKontekst : DbContext
   {
-    public MvcFilmyKontekst(DbContextOptions<MvcFilmyKontekst> opcje) : base(opcje)
+    public FilmyKontekst(DbContextOptions<FilmyKontekst> opcje) : base(opcje)
     {
     }
 

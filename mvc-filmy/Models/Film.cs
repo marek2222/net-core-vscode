@@ -15,4 +15,4 @@ namespace mvc_filmy.Models
   }
 }
 
-// dotnet aspnet-codegenerator controller -name FilmyController -m Film -dc MvcFilmyKontekst --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+// dotnet aspnet-codegenerator controller -name FilmyController -m Film -dc FilmyKontekst --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
