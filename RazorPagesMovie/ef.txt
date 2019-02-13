@@ -1,0 +1,2 @@
+dotnet ef migrations add <Opis>
+dotnet ef database update
