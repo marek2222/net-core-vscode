@@ -14,6 +14,7 @@ namespace RazorPagesMovie.Models
 
     [Display(Name = "Release Date")]
     [DataType(DataType.Date)]
+    [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
     public DateTime ReleaseDate { get; set; }
 
     [Range(1, 100)]
