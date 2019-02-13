@@ -60,7 +60,7 @@ namespace mvc_filmy
       {
         routes.MapRoute(
                   name: "default",
-                  template: "{controller=Home}/{action=Index}/{id?}");
+                  template: "{controller=Filmy}/{action=Index}/{id?}");
       });
     }
   }

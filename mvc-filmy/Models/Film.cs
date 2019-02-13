@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mvc_filmy.Models
 {
@@ -8,9 +9,14 @@ namespace mvc_filmy.Models
     public int Id { get; set; }
     public string Tytul { get; set; }
 
+
+    [Display(Name = "Data wydania")]
     [DataType(DataType.Date)]
     public DateTime DataWydania { get; set; }
     public string Gatunek { get; set; }
+
+
+    [Column(TypeName = "decimal(18, 2)")]
     public decimal Cena { get; set; }
   }
 }
