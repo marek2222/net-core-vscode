@@ -7,16 +7,18 @@ namespace mvc_filmy.Controllers
   {
     // 
     // GET: /WitajSwiecie/
-    public string Index()
+    public IActionResult Index()
     {
-      return "To jest domyślna akcja...";
+      return View();
     }
-
+    
     // 
     // GET: /WitajSwiecie/Witaj?nazwa=marek2222&liczba=3 
-    public string Witaj(string nazwa, int liczba = 1)
+    public IActionResult Witaj(string nazwa, int liczba = 1)
     {
-      return HtmlEncoder.Default.Encode($"Cześć {nazwa}, liczba to: {liczba}");
+      ViewData["Wiadomosc"] = "Cześć " + nazwa;
+      ViewData["Liczba"] = liczba;
+      return View();
     }
   }
 }
