@@ -14,3 +14,5 @@ namespace mvc_filmy.Models
     public decimal Cena { get; set; }
   }
 }
+
+// dotnet aspnet-codegenerator controller -name FilmyController -m Film -dc MvcFilmyKontekst --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries

@@ -32,7 +32,7 @@ namespace mvc_filmy
               options.CheckConsentNeeded = context => true;
         options.MinimumSameSitePolicy = SameSiteMode.None;
       });
-      services.AddDbContext<FilmyKontekst>(options =>
+      services.AddDbContext<MvcFilmyKontekst>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -51,7 +51,7 @@ namespace mvc_filmy
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
       }
-      
+
       app.UseHttpsRedirection();
       app.UseStaticFiles();
       app.UseCookiePolicy();
