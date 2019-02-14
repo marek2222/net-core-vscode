@@ -19,9 +19,14 @@ namespace mvc_filmy.Controllers
     }
 
     // GET: Filmy
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string szukanyTytul)
     {
-      return View(await _context.Film.ToListAsync());
+      var filmy = from f in _context.Film select f;
+      if (!String.IsNullOrEmpty(szukanyTytul))
+      {
+          filmy = filmy.Where(w => w.Tytul.Contains(szukanyTytul));
+      }
+      return View(await filmy.ToListAsync());
     }
 
     // GET: Filmy/Details/5
