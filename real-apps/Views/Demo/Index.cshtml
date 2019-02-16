@@ -1,0 +1,12 @@
+@{
+  ViewData["Title"] = "Demo Page";
+}
+
+<div class="text-left">
+  Age:      @ViewBag.age <br/>
+  FullName: @ViewBag.fullName <br/>
+  Status:   @ViewBag.status <br/>
+  Price:    @ViewBag.price <br/>
+  Birthday: @ViewBag.birthday.ToString("yyyy/mm/dd")
+
+</div>
