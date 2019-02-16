@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace real_apps.Models
 {
   public class Product
@@ -5,6 +7,6 @@ namespace real_apps.Models
     public string Id { get; set; }
     public string Name { get; set; }
     public double Price { get; set; }
-    public string Photo { get; set; }
+    public List<string> Photos { get; set; }
   }
 }

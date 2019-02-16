@@ -18,7 +18,12 @@ ViewData["Title"] = "Success Page";
     <td>@ViewBag.Product.Price</td>
   </tr>
   <tr>
-    <td>Photo</td>
-    <td><img src="~/images/@ViewBag.Product.Photo" width="120px" alt="" /></td>
+    <td>Photo(s)</td>
+    <td>
+      @foreach(var photo in ViewBag.Product.Photos)
+      {
+        <img src="~/images/@photo" width="120px" />
+      }
+    </td>
   </tr>
 </table>

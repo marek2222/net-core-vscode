@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,18 +20,22 @@ namespace real_apps.Controllers
 
     [Route("save")]
     [HttpPost]
-    public IActionResult Save(Product product, IFormFile photo)
+    public IActionResult Save(Product product, IFormFile[] photos)
     {
-      if (photo == null || photo.Length == 0)
+      if (photos == null || photos.Length == 0)
       {
         return Content("File not selected");
       }
       else
       {
-        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", photo.FileName);
-        var stream = new FileStream(path, FileMode.Create);
-        photo.CopyToAsync(stream);
-        product.Photo = photo.FileName;
+        product.Photos = new List<string>();
+        foreach (IFormFile photo in photos)
+        {
+          var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", photo.FileName);
+          var stream = new FileStream(path, FileMode.Create);
+          photo.CopyToAsync(stream);
+          product.Photos.Add(photo.FileName);
+        }
       }
       ViewBag.product = product;
       return View("Success");
