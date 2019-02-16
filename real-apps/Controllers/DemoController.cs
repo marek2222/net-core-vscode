@@ -2,11 +2,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace real_apps.Controllers
 {
-  public class DemoController : Controller
-  {
-    public IActionResult Index()
+    [Route("demo")]
+    public class DemoController : Controller
     {
-      return View();
+        [Route("")]
+        [Route("index")]
+        [Route("~/")]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [Route("demo2")]
+        public IActionResult Demo2()
+        {
+            return View("Demo2");
+        }
     }
-  }
 }

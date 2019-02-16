@@ -1,7 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Demo Page";
+  ViewData["Title"] = "Demo Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+  <h3>Index View</h3>
+  <a asp-controller="demo">Index</a>
+  <br />
+  <a asp-controller="demo" asp-action="index">Index</a>
+  <br />
+  <a asp-controller="demo" asp-action="demo2">Demo 2</a>
 </div>
