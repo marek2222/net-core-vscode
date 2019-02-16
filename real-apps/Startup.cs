@@ -34,6 +34,7 @@ namespace real_apps
       });
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddSession();
 
       services.AddDbContext<RealAppContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -55,6 +56,7 @@ namespace real_apps
       }
 
       app.UseHttpsRedirection();
+      app.UseSession();
       app.UseStaticFiles();
       app.UseCookiePolicy();
 
