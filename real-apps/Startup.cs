@@ -33,7 +33,11 @@ namespace real_apps
         options.MinimumSameSitePolicy = SameSiteMode.None;
       });
 
-      services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddMvc()
+        .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+        .AddSessionStateTempDataProvider();
+      
+      services.AddSession();
 
       services.AddDbContext<RealAppContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -55,6 +59,7 @@ namespace real_apps
       }
 
       app.UseHttpsRedirection();
+      app.UseSession();
       app.UseStaticFiles();
       app.UseCookiePolicy();
 

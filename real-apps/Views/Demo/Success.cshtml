@@ -1,0 +1,37 @@
+﻿@{
+ViewData["Title"] = "Success Page";
+}
+@using real_apps.Models;
+@using real_apps.Helpers;
+
+@{
+	var product = TempDataHelper.Get<Product>(TempData, "product") as Product;
+}
+
+	<h3>Single Values</h3>
+	<table border="1">
+		<tr>
+			<td>Age</td>
+			<td>@TempData["age"]</td>
+		</tr>
+		<tr>
+			<td>Username</td>
+			<td>@TempData["username"]</td>
+		</tr>
+	</table>
+
+	<h3>Product Info</h3>
+	<table border="1">
+		<tr>
+			<td>Id</td>
+			<td>@product.Id</td>
+		</tr>
+		<tr>
+			<td>Name</td>
+			<td>@product.Name</td>
+		</tr>
+		<tr>
+			<td>Price</td>
+			<td>@product.Price</td>
+		</tr>
+	</table>

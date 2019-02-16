@@ -1,7 +1,46 @@
-﻿@{
-    ViewData["Title"] = "Demo Page";
+﻿@model real_apps.Models.Product
+@{
+ViewData["Title"] = "Demo Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
+<form method="post" asp-controller="demo" asp-action="save">
+	<fieldset>
+		<legend>Single Values</legend>
+		<table>
+			<tr>
+				<td>Age</td>
+				<td><input type="text" name="age" /></td>
+			</tr>
+			<tr>
+				<td>Username</td>
+				<td><input type="text" name="username" /></td>
+			</tr>
+		</table>
+	</fieldset>
+
+	<fieldset>
+		<legend>Product Information</legend>
+		<table>
+			<tr>
+				<td>Id</td>
+				<td>
+					<input asp-for="Id" />
+				</td>
+			</tr>
+			<tr>
+				<td>Name</td>
+				<td>
+					<input asp-for="Name" />
+				</td>
+			</tr>
+			<tr>
+				<td>Price</td>
+				<td>
+					<input asp-for="Price" />
+				</td>
+			</tr>
+
+		</table>
+	</fieldset>
+	<input type="submit" value="Save" />
+</form>
