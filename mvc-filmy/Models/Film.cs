@@ -13,6 +13,7 @@ namespace mvc_filmy.Models
     [Display(Name = "Data wydania")]
     [DataType(DataType.Date)]
     public DateTime DataWydania { get; set; }
+    
     public string Gatunek { get; set; }
 
 

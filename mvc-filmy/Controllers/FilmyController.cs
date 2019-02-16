@@ -18,15 +18,37 @@ namespace mvc_filmy.Controllers
       _context = context;
     }
 
+    // public async Task<IActionResult> Index(string szukanyTytul)
+    // {
+    //   var filmy = from f in _context.Film select f;
+    //   if (!String.IsNullOrEmpty(szukanyTytul))
+    //   {
+    //       filmy = filmy.Where(w => w.Tytul.Contains(szukanyTytul));
+    //   }
+    //   return View(await filmy.ToListAsync());
+    // }
+
     // GET: Filmy
-    public async Task<IActionResult> Index(string szukanyTytul)
+    public async Task<IActionResult> Index(string gatunekFilmu, string szukane)
     {
-      var filmy = from f in _context.Film select f;
-      if (!String.IsNullOrEmpty(szukanyTytul))
+      IQueryable<string> gatunkiQuery = from s in _context.Film 
+        orderby s.Gatunek 
+        select s.Gatunek;
+      var filmy = from f in _context.Film 
+        select f;
+      if (!String.IsNullOrEmpty(szukane))
       {
-          filmy = filmy.Where(w => w.Tytul.Contains(szukanyTytul));
+          filmy = filmy.Where(w => w.Tytul.Contains(szukane));
       }
-      return View(await filmy.ToListAsync());
+      if (!String.IsNullOrEmpty(gatunekFilmu))
+      {
+          filmy = filmy.Where(w => w.Gatunek == gatunekFilmu);
+      }
+      var gatunekFilmuVM = new GatunekFilmuViewModel{
+        Gatunki = new SelectList(await gatunkiQuery.Distinct().ToListAsync()),
+        Filmy = await filmy.ToListAsync()
+      };
+      return View(gatunekFilmuVM);
     }
 
     // GET: Filmy/Details/5
