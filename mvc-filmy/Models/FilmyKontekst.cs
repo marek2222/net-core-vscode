@@ -9,5 +9,6 @@ namespace mvc_filmy.Models
     }
 
     public DbSet<Film> Film { get; set; }
+    public DbSet<Movie> Movie { get; set; }
   }
 }

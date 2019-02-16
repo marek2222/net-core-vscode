@@ -1,60 +1,60 @@
 @model IEnumerable<mvc_filmy.Models.Film>
 
-@{
-    ViewData["Title"] = "Index";
-}
+  @{
+  ViewData["Title"] = "Index";
+  }
 
-<h1>Index</h1>
+  <h1>Index</h1>
 
-<p>
+  <p>
     <a asp-action="Create">Create New</a>
-</p>
-<form asp-controller="Film" asp-action="Index" method="GET">
+  </p>
+  <form asp-controller="Film" asp-action="Index" method="GET">
     <p>
-        Tytuł: <input type="text" name="szukanyTytul" />
-        <input type="submit" value="Filtruj" />
+      Tytuł: <input type="text" name="szukanyTytul" />
+      <input type="submit" value="Filtruj" />
     </p>
-</form>
+  </form>
 
-<table class="table">
+  <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Tytul)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DataWydania)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gatunek)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cena)
-            </th>
-            <th></th>
-        </tr>
+      <tr>
+        <th>
+          @Html.DisplayNameFor(model => model.Tytul)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.DataWydania)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.Gatunek)
+        </th>
+        <th>
+          @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th></th>
+      </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tytul)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataWydania)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gatunek)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cena)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+      @foreach (var item in Model) {
+      <tr>
+        <td>
+          @Html.DisplayFor(modelItem => item.Tytul)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.DataWydania)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Gatunek)
+        </td>
+        <td>
+          @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+          <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+          <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+          <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+      </tr>
+      }
     </tbody>
-</table>
+  </table>

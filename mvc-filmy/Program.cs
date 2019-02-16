@@ -27,7 +27,7 @@ namespace mvc_filmy
         {
           var context = services.GetRequiredService<FilmyKontekst>();
           context.Database.Migrate();
-          DaneStartowe.Utworz(services);
+          SeedData.Initialize(services);
         }
         catch (Exception ex)
         {
