@@ -2,6 +2,9 @@
     ViewData["Title"] = "Demo Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
+<h3>Multiple Submit Form</h3>
+<form method="POST">
+    <input type="submit" value="Work1" asp-controller="Demo" asp-action="Work1" />
+    <input type="submit" value="Work2" asp-controller="Demo" asp-action="Work2" />
+    <input type="submit" value="Work3" asp-controller="Demo" asp-action="Work3" />
+</form>
