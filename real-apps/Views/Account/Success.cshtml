@@ -1,0 +1,28 @@
+@model real_apps.Models.Account
+@{
+ViewData["Title"] = "Acoount Page";
+}
+
+<h3>Account info</h3>
+<table border="1" cellpadding="2" cellspacing="2">
+  <tr>
+    <td>Username</td>
+    <td>@ViewBag.account.Username</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>@ViewBag.account.Password</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>@ViewBag.account.Age</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>@ViewBag.account.Email</td>
+  </tr>
+  <tr>
+    <td>Website</td>
+    <td>@ViewBag.account.Website</td>
+  </tr>
+</table>
