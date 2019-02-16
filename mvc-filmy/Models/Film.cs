@@ -19,6 +19,8 @@ namespace mvc_filmy.Models
 
     [Column(TypeName = "decimal(18, 2)")]
     public decimal Cena { get; set; }
+
+    public string Ocena  { get; set; } 
   }
 }
 

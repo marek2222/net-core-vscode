@@ -18,16 +18,6 @@ namespace mvc_filmy.Controllers
       _context = context;
     }
 
-    // public async Task<IActionResult> Index(string szukanyTytul)
-    // {
-    //   var filmy = from f in _context.Film select f;
-    //   if (!String.IsNullOrEmpty(szukanyTytul))
-    //   {
-    //       filmy = filmy.Where(w => w.Tytul.Contains(szukanyTytul));
-    //   }
-    //   return View(await filmy.ToListAsync());
-    // }
-
     // GET: Filmy
     public async Task<IActionResult> Index(string gatunekFilmu, string szukane)
     {
@@ -80,7 +70,7 @@ namespace mvc_filmy.Controllers
     // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Create([Bind("Id,Tytul,DataWydania,Gatunek,Cena")] Film film)
+    public async Task<IActionResult> Create([Bind("Id,Tytul,DataWydania,Gatunek,Cena,Ocena")] Film film)
     {
       if (ModelState.IsValid)
       {
@@ -112,7 +102,7 @@ namespace mvc_filmy.Controllers
     // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, [Bind("Id,Tytul,DataWydania,Gatunek,Cena")] Film film)
+    public async Task<IActionResult> Edit(int id, [Bind("Id,Tytul,DataWydania,Gatunek,Cena,Ocena")] Film film)
     {
       if (id != film.Id)
       {
