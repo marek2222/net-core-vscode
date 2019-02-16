@@ -1,7 +1,33 @@
 ﻿@{
-    ViewData["Title"] = "Demo Page";
+ViewData["Title"] = "Demo Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+  <h3>Product Info</h3>
+  <table border="1" cellpadding="2" cellspacing="2">
+    <tr>
+      <td>Id</td>
+      <td>@ViewBag.product.Id</td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>@ViewBag.product.Name</td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><img src="~/images/@ViewBag.product.Photo" width="60" /></td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>@ViewBag.product.Price</td>
+    </tr>
+    <tr>
+      <td>Quantity</td>
+      <td>@ViewBag.product.Quantity</td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td>@(ViewBag.product.Price * ViewBag.product.Quantity)</td>
+    </tr>
+  </table>
 </div>
