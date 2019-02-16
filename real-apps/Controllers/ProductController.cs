@@ -16,7 +16,9 @@ namespace real_apps.Controllers
       return View("Index", new Product());
     }
 
+
     [Route("save")]
+    [HttpPost]
     public IActionResult Save(Product product, IFormFile photo)
     {
       if (photo == null || photo.Length == 0)
@@ -25,8 +27,7 @@ namespace real_apps.Controllers
       }
       else
       {
-        var path = Path.Combine(Directory.GetCurrentDirectory(),
-          "wwwroot/images", photo.FileName);
+        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", photo.FileName);
         var stream = new FileStream(path, FileMode.Create);
         photo.CopyToAsync(stream);
         product.Photo = photo.FileName;
@@ -34,5 +35,6 @@ namespace real_apps.Controllers
       ViewBag.product = product;
       return View("Success");
     }
+
   }
 }

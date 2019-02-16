@@ -1,29 +1,39 @@
-﻿@{
+﻿@model real_apps.Models.Product
+
+@{
   ViewData["Title"] = "Product Page";
 }
 
 
-<form asp-controller="Product" asp-action="Save" method="POST" enctype="multipart/form-data">
-    <table cellpadding="2" cellspacing="2">
-        <tr>
-            <td>Id</td>
-            <td><input type="text" asp-for="Id" /></td>
-        </tr>
-        <tr>
-            <td>Name</td>
-            <td><input type="text" asp-for="Name" /></td>
-        </tr>
-        <tr>
-            <td>Price</td>
-            <td><input type="text" asp-for="Price" /></td>
-        </tr>
-        <tr>
-            <td>Photo</td>
-            <td><input type="text" asp-for="Photo" /></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td><input type="submit" value="Save" /></td>
-        </tr>
-    </table>
+<form asp-controller="product" asp-action="save" method="post" enctype="multipart/form-data">
+  <table cellpadding="2" cellspacing="2">
+    <tr>
+      <td>Id</td>
+      <td>
+        <input type="text" asp-for="Id" />
+      </td>
+    </tr>
+    <tr>
+      <td>Name</td>
+      <td>
+        <input type="text" asp-for="Name" />
+      </td>
+    </tr>
+    <tr>
+      <td>Price</td>
+      <td>
+        <input type="text" asp-for="Price" />
+      </td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td>
+        <input type="file" name="photo" />
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" value="Save" /></td>
+    </tr>
+  </table>
 </form>
