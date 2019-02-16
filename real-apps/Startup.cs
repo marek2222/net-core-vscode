@@ -62,7 +62,7 @@ namespace real_apps
       {
         routes.MapRoute(
                   name: "default",
-                  template: "{controller=Home}/{action=Index}/{id?}");
+                  template: "{controller=Demo}/{action=Index}/{id?}");
       });
     }
   }
