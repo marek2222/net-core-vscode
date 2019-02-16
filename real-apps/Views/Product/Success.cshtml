@@ -1,0 +1,24 @@
+﻿@{
+ViewData["Title"] = "Success Page";
+}
+
+<h3>Product info</h3>
+
+<table cellpadding="2" cellspacing="2" border="1">
+  <tr>
+    <td>Id</td>
+    <td>@ViewBag.Product.Id</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>@ViewBag.Product.Name" /></td>
+  </tr>
+  <tr>
+    <td>Price</td>
+    <td>@ViewBag.Product.Price" /></td>
+  </tr>
+  <tr>
+    <td>Photo</td>
+    <td><img src="~/images/@ViewBag.Product.Photo" width="120px" alt="" /></td>
+  </tr>
+</table>
