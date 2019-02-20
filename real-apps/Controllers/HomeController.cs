@@ -18,6 +18,5 @@ namespace real_apps.Controllers
     {
       return View();
     }
-
   }
 }
