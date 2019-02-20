@@ -8,12 +8,10 @@ using real_apps.Models;
 
 namespace real_apps.Controllers
 {
-  [Route("home")]
-  public class HomeController : Controller
+  [Route("news")]
+  public class NewsController : Controller
   {
-    [Route("")]
     [Route("index")]
-    [Route("~/")]
     public IActionResult Index()
     {
       return View();
