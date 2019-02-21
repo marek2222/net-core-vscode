@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <!-- <title>Page Title</title> -->
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tr>
+        <td colspan="2">
+          <a asp-controller="Home"    asp-action="index">Home</a>
+          <a asp-controller="AboutUs" asp-action="index">About Us</a>
+          <a asp-controller="News"    asp-action="index">News</a>
+        </td>
+        <td valign="top">
+          @await Component.InvokeAsync("Category")
+        </td>
+        <td valign="top">
+          @RenderBody()
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">Company</td>
+      </tr>
+    </table>
+
+  </body>
+</html>
+
