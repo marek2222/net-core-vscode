@@ -1,0 +1,7 @@
+@{
+    ViewData["Title"] = "Welcome Page";
+}
+@using Microsoft.AspNetCore.Http;
+
+<h3>Welcome @Context.Session.GetString("username")</h3>
+

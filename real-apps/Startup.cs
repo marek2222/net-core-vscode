@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +35,7 @@ namespace real_apps
       });
 
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+      services.AddSession();
 
       services.AddDbContext<RealAppContext>(options =>
         options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -53,6 +55,8 @@ namespace real_apps
         // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
         app.UseHsts();
       }
+      app.UseSession();
+      app.UseMiddleware<AuthenticationMiddleware>();
 
       app.UseHttpsRedirection();
       app.UseStaticFiles();
@@ -62,7 +66,7 @@ namespace real_apps
       {
         routes.MapRoute(
                   name: "default",
-                  template: "{controller=Demo}/{action=Index}/{id?}");
+                  template: "{controller=Home}/{action=Index}/{id?}");
       });
     }
   }

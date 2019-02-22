@@ -8,22 +8,15 @@ using real_apps.Models;
 
 namespace real_apps.Controllers
 {
-    public class HomeController : Controller
+  [Route("home")]
+  public class HomeController : Controller
+  {
+    [Route("")]
+    [Route("index")]
+    [Route("~/")]
+    public IActionResult Index()
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+      return View();
     }
+  }
 }
