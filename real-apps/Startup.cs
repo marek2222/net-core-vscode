@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using real_apps.Middlewares;
 using real_apps.Models;
 
 namespace real_apps
@@ -54,6 +55,10 @@ namespace real_apps
         app.UseHsts();
       }
 
+      // Add Middlewares
+      app.UseMiddleware<DateLogMiddleware>();
+      app.UseMiddleware<BrowserMiddleware>();
+
       app.UseHttpsRedirection();
       app.UseStaticFiles();
       app.UseCookiePolicy();
@@ -62,8 +67,16 @@ namespace real_apps
       {
         routes.MapRoute(
                   name: "default",
-                  template: "{controller=Demo}/{action=Index}/{id?}");
+                  template: "{controller=Home}/{action=Index}/{id?}");
       });
+
+      // app.Map("/helloworld", mapApp =>
+      // {
+      //   mapApp.Run(async context =>
+      //   {
+      //     await context.Response.WriteAsync("Hello World!");
+      //   });
+      // });
     }
   }
 }
