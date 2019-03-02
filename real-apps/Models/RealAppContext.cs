@@ -9,6 +9,6 @@ namespace real_apps.Models
     {
     }
 
-    //public DbSet<Movie> Movie { get; set; }
+    public DbSet<Product> Products { get; set; }
   }
 }

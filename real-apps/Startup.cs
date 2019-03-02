@@ -51,7 +51,7 @@ namespace real_apps {
       app.UseMvc (routes => {
         routes.MapRoute (
           name: "default",
-          template: "{controller=Demo}/{action=Index}/{id?}");
+          template: "{controller=Product}/{action=Index}/{id?}");
       });
     }
   }
