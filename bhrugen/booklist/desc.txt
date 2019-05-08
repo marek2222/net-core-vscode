@@ -6,10 +6,19 @@
 ------------------------------------------
 ------------------------------------------
 ------------------------------------------
+1_3: Pakiety NuGet dla netCore 2.1
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4"/>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="2.1.2"/>
+  lub
+    dotnet add package Microsoft.EntityFrameworkCore.SQLServer
+    dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+  Później rejestracja kontekstu w Startup.cs 
 
 
 ------------------------------------------
 1_2:  Required assets to build and debug are missing from 'mvc-filmy'. Add them? Click Yes.
+
 
 ------------------------------------------
 1_1: Initial project
