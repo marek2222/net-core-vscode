@@ -8,7 +8,7 @@ using booklist.Models;
 
 namespace booklist.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(BooksContext))]
     [Migration("20190509050523_AddBookModel")]
     partial class AddBookModel
     {

@@ -4,10 +4,16 @@
 
 ------------------------------------------
 ------------------------------------------
+2.18: BookController, Index Action and View
+Scafflding przez:        
+$ dotnet aspnet-codegenerator controller -name BooksController -m Book -dc BooksContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
+
 ------------------------------------------
 2.17: Add book model, AppDbContext and add to Database
   $ dotnet ef migrations add AddBookModel  
   $ dotnet ef database update
+
 
 ------------------------------------------
 1_3: Pakiety NuGet dla netCore 2.1
