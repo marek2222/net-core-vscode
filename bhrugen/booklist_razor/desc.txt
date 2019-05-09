@@ -1,0 +1,5 @@
+------------------------------------------
+3.25: Initial project for 'booklist_razor'
+  mkdir booklist_razor
+  cd booklist_razor
+  dotnet new razor
