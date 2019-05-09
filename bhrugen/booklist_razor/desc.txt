@@ -1,4 +1,8 @@
 ------------------------------------------
+3.26:  Required assets to build and debug are missing from 'mvc-filmy'. Add them? Click Yes.
+
+
+------------------------------------------
 3.25: Initial project for 'booklist_razor'
   mkdir booklist_razor
   cd booklist_razor
