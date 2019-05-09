@@ -1,0 +1,20 @@
+﻿@{
+ViewData["Title"] = "Demo Page";
+}
+
+<h3>AutoComplete in ASP.NET Core MVC</h3>
+<form>
+    <input type="text" id="productName" placeholder="Input your keyword"/>
+</form>
+
+
+@section Scripts {
+  <script type="text/javascript">
+    $(document).ready(function () {
+        $('#productName').autocomplete({
+          source: '/api/product/search'
+        });
+      });
+    });
+  </script>
+}
