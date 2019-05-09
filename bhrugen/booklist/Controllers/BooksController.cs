@@ -42,9 +42,6 @@ namespace booklist.Controllers {
       return View ();
     }
 
-    // POST: Books/Create
-    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Create ([Bind ("Id,Name")] Book book) {
@@ -55,6 +52,7 @@ namespace booklist.Controllers {
       }
       return View (book);
     }
+
 
     // GET: Books/Edit/5
     public async Task<IActionResult> Edit (int? id) {

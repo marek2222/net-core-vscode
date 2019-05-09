@@ -3,6 +3,14 @@
 
 
 ------------------------------------------
+2.19: BookController : Create Action
+  Update Book.cs file and add: 
+    using System.ComponentModel.DataAnnotations;
+  
+  $ dotnet ef migrations add AddBookModel  
+  $ dotnet ef database update
+
+
 ------------------------------------------
 2.18: BookController, Index Action and View
 Scafflding przez:        
