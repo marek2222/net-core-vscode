@@ -5,6 +5,10 @@
 ------------------------------------------
 ------------------------------------------
 ------------------------------------------
+2.17: Add book model, AppDbContext and add to Database
+  $ dotnet ef migrations add AddBookModel  
+  $ dotnet ef database update
+
 ------------------------------------------
 1_3: Pakiety NuGet dla netCore 2.1
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4"/>
