@@ -1,4 +1,10 @@
 ------------------------------------------
+3.27: Create model and add to Database. Create DbContext and add to services in StartUp.cs 
+  dotnet ef migrations add addBookToDB
+  dotnet ef database update
+  
+
+------------------------------------------
 3.26:  Required assets to build and debug are missing from 'mvc-filmy'. Add them? Click Yes.
 
 
