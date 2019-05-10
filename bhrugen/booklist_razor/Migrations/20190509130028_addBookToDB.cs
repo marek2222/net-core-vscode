@@ -7,7 +7,7 @@ namespace booklist_razor.Migrations {
 			migrationBuilder.CreateTable (
 				name: "Books",
 				columns : table => new {
-					id = table.Column<int> (nullable: false)
+					Id = table.Column<int> (nullable: false)
 						.Annotation ("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
 						Tytul = table.Column<string> (nullable: true),
 						Autor = table.Column<string> (nullable: true),
@@ -16,7 +16,7 @@ namespace booklist_razor.Migrations {
 						Cena = table.Column<double> (nullable: false)
 				},
 				constraints : table => {
-					table.PrimaryKey ("PK_Books", x => x.id);
+					table.PrimaryKey ("PK_Books", x => x.Id);
 				});
 		}
 

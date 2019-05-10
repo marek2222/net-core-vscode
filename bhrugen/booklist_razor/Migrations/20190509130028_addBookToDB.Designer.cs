@@ -22,7 +22,7 @@ namespace booklist_razor.Migrations
 
             modelBuilder.Entity("booklist_razor.Model.Book", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -36,7 +36,7 @@ namespace booklist_razor.Migrations
 
                     b.Property<string>("Tytul");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Books");
                 });
