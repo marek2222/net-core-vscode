@@ -22,16 +22,20 @@ namespace booklist_razor.Pages.BookList {
         [BindProperty]
         public Book Book { get; set; }
 
-        public void OnGet () { }
+        public void OnGet()
+        {
+        }
 
-        public async Task<IActionResult> OnPost () {
-            if (!ModelState.IsValid) {
-                return Page ();
+        public async Task<IActionResult> OnPost()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
             }
-            _db.Books.Add (Book);
-            await _db.SaveChangesAsync ();
+            _db.Books.Add(Book);
+            await _db.SaveChangesAsync();
             Message = "New Book Added successfully!";
-            return RedirectToPage ("Index");
+            return RedirectToPage("Index");
         }
     }
 }

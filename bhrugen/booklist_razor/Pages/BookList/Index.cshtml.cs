@@ -12,8 +12,8 @@ namespace booklist_razor.Pages.BookList
     public class IndexModel : PageModel
     {
         private BooksContext _db;
-        // [TempData]
-        // public string Message { get; set; }
+        [TempData]
+        public string Message { get; set; }
 
         public IndexModel(BooksContext db)
         {
@@ -26,16 +26,15 @@ namespace booklist_razor.Pages.BookList
         {
             Books = await _db.Books.ToListAsync();
         }
+        public async Task<IActionResult> OnPostDelete(int id)
+        {
+            var book = _db.Books.Find(id);
+            _db.Books.Remove(book);
+            await _db.SaveChangesAsync();
        
-        // public async Task<IActionResult> OnPostDelete(int id)
-        // {
-        //     var book = _db.Books.Find(id);
-        //     _db.Books.Remove(book);
-        //     await _db.SaveChangesAsync();
+            Message = "Book Deleted Successfully!";
 
-        //     Message = "Book Deleted Successfully!";
-
-        //     return RedirectToPage();
-        // }
+            return RedirectToPage();
+        }
     }
 }
