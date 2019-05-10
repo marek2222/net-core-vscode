@@ -1,10 +1,34 @@
 ------------------------------------------
+4.39: Project files and migrations
+  Add Nuget packages :
+    --<PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4"/>
+    --<PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2"/>
+    --<PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="2.1.2"/>
+    --<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4"/>
+    --<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4"/>
+    --<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4"/>
+
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4"/>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2"/>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Language" Version="2.1.2"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4"/>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4"/>
+    <PackageReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.2"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4"/>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4"/>
+
+    $ dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+
+
+------------------------------------------
+Required assets to build and debug are missing from 'mvc-filmy'. Add them? Click Yes.
+
+------------------------------------------
 4.38: Create Project
   $ mkdir SammysAuto
   $ cd SammysAuto\
   $ dotnet new mvc --auth Individual
 
-  
 
 ------------------------------------------
 4.37: Introduction to Project 3
