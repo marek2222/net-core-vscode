@@ -17,7 +17,14 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4"/>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4"/>
 
-    $ dotnet aspnet-codegenerator identity -dc WebApp1.Data.ApplicationDbContext --files "Account.Register;Account.Login;Account.Logout"
+  Add DefaultConnection to appsettings.json file:
+    "ConnectionStrings": {     
+      "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=net-core-test;Integrated security=True; Trusted_Connection=True;"   
+    },
+
+  Change UseSqlite on UseSqlServer  in Startup.cs; 
+    services.AddDbContext<ApplicationDbContext> (options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+    services.AddDbContext<ApplicationDbContext> (options => options.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection")));
 
 
 ------------------------------------------
