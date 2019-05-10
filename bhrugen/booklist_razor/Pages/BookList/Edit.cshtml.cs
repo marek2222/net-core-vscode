@@ -10,26 +10,38 @@ using Microsoft.EntityFrameworkCore;
 namespace booklist_razor.Pages.BookList {
 	public class EditModel : PageModel {
 		private BooksContext _db;
-		[TempData]
-		public string Message { get; set; }
 
 		public EditModel (BooksContext db) {
 			_db = db;
 		}
 
-		public IEnumerable<Book> Books { get; set; }
+		[BindProperty]
+		public Book Book { get; set; }
 
-		public async Task OnGet () {
-			Books = await _db.Books.ToListAsync ();
+		[TempData]
+		public string Message { get; set; }
+
+		public void OnGet (int id) {
+			Book =  _db.Books.Find(id);
 		}
-		public async Task<IActionResult> OnPostDelete (int id) {
-			var book = _db.Books.Find (id);
-			_db.Books.Remove (book);
-			await _db.SaveChangesAsync ();
 
-			Message = "Book Deleted Successfully!";
+		public async Task<IActionResult> OnPost(){
+				if (ModelState.IsValid)
+				{
+					var bookInDb = _db.Books.Find(Book.Id);
+					bookInDb.ISBN 	= Book.ISBN;
+					bookInDb.Tytul 	= Book.Tytul;
+					bookInDb.Autor 	= Book.Autor;
+					bookInDb.Cena 	= Book.Cena;
+					bookInDb.Dostepnosc = Book.Dostepnosc;
 
-			return RedirectToPage ();
-		}
+					await _db.SaveChangesAsync();
+					Message = "Book update succesfully";
+
+					return RedirectToPage("Index");
+				}
+				return RedirectToPage();
+		} 
+
 	}
 }
