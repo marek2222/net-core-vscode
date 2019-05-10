@@ -1,4 +1,22 @@
 ------------------------------------------
+  Apply migrations
+    $ dotnet ef database update
+
+------------------------------------------
+4.38:  Add note to appsettings.json   and  Startup.cs.
+
+  Add DefaultConnection to appsettings.json file:
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=net-core-test;Integrated security=True; Trusted_Connection=True;"
+    },
+
+  Change UseSqlite on UseSqlServer  in Startup.cs;
+    services.AddDbContext<ApplicationDbContext> (options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+    services.AddDbContext<ApplicationDbContext> (options => options.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection")));
+
+
+
+------------------------------------------
 4.39: Project files and migrations
   Add Nuget packages :
     --<PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4"/>
@@ -17,14 +35,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4"/>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4"/>
 
-  Add DefaultConnection to appsettings.json file:
-    "ConnectionStrings": {     
-      "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=net-core-test;Integrated security=True; Trusted_Connection=True;"   
-    },
-
-  Change UseSqlite on UseSqlServer  in Startup.cs; 
-    services.AddDbContext<ApplicationDbContext> (options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
-    services.AddDbContext<ApplicationDbContext> (options => options.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection")));
 
 
 ------------------------------------------
