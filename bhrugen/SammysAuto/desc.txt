@@ -1,0 +1,11 @@
+------------------------------------------
+4.38: Create Project
+  $ mkdir SammysAuto
+  $ cd SammysAuto\
+  $ dotnet new mvc --auth Individual
+
+  
+
+------------------------------------------
+4.37: Introduction to Project 3
+
