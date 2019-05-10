@@ -1,4 +1,8 @@
 ------------------------------------------
+Test Register and Login
+  Run the app and register a user. Depending on your screen size, you might need to select the navigation toggle button to see the Register and Login links.
+
+------------------------------------------
   Apply migrations
     $ dotnet ef database update
 
