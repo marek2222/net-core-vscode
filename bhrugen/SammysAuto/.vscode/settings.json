@@ -1,0 +1,7 @@
+{
+  "csharpfixformat.style.newline.elseCatch": true,
+  "csharpfixformat.sort.usings.splitGroups": true,
+  "csharpfixformat.style.braces.onSameLine": false,
+  "csharpfixformat.style.indent.switchCaseIgnored": true,
+  "csharpfixformat.style.operators.onSameLine": false
+}

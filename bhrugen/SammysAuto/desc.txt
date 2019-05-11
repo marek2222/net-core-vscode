@@ -1,0 +1,98 @@
+------------------------------------------
+bhrugen: 4.39:  Use custom user data to Identity
+  Change IdentityUser => ApplicationUser in project.
+
+
+------------------------------------------
+4.38:  Add note to appsettings.json   and  Startup.cs.
+
+  Change SammysAutoIdentityDbContext => ApplicationDbContext in project.
+
+  Add DefaultConnection to appsettings.json file:
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=net-core-test;Integrated security=True; Trusted_Connection=True;"
+    },
+ 
+  Add UseSqlServer  in Startup.cs;
+    services.AddDbContext<ApplicationDbContext> (options => options.UseSqlServer (Configuration.GetConnectionString ("DefaultConnection")));
+
+  ASP.NET Core 2.1+
+    This is all that is needed for ASP.NET Core 2.1+ because the 
+    Microsoft.EntityFrameworkCore.Design package is included 
+    in the    Microsoft.AspNetCore.App    metapackage.
+
+  The generated Identity database code requires Entity Framework Core Migrations. Create a migration and update the database. For example, run the following commands:
+    $ dotnet ef migrations add CreateIdentitySchema
+    $ dotnet ef database update
+
+
+------------------------------------------
+Scaffold identity into an MVC project without existing authorization:
+  https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-2.1&tabs=netcore-cli
+  Identity scaffolder options:
+    $ dotnet aspnet-codegenerator identity -h
+
+  In the project folder, run the Identity scaffolder with the options you want. For example, 
+  to setup identity with the default UI and the minimum number of files, run the following command:
+    $ dotnet aspnet-codegenerator identity --target-framework 2.2.203
+
+  Add the login partial (_LoginPartial) to the Views/Shared/_Layout.cshtml file:
+  After this:
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+          <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+          <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+          <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+      </ul>
+  add this:
+      <partial name="_LoginPartial" />
+
+  Move the Pages/Shared/_LoginPartial.cshtml file to Views/Shared/_LoginPartial.cshtml
+
+  Call UseAuthentication after UseStaticFiles in Startup.cs:
+    app.UseStaticFiles();
+    app.UseAuthentication();
+
+
+ 
+------------------------------------------
+Nuget package for .Net Core 2.2.203: 
+   $ dotnet tool install --global dotnet-aspnet-codegenerator --version 2.2.3
+
+    $ dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design --version 2.2.3 
+    $ dotnet restore
+
+
+
+ ------------------------------------------
+ .NET Core Global Tools overview
+     https://docs.microsoft.com/pl-pl/dotnet/core/tools/global-tools
+   
+   Zobacz które środowiska uruchomieniowe są zainstalowane na komputerze 
+     $ dotnet --list-runtimes
+   
+   Aktualizowanie narzędzie globalne obejmuje odinstalowanie i ponowne zainstalowanie go za pomocą najnowszej stabilnej wersji. Aby zaktualizować narzędzie globalne, użyj aktualizacji narzędzi dotnet polecenia:
+     $ dotnet tool update -g <packagename>
+ 
+   Usuń narzędzie globalne przy użyciu narzędzia dotnet odinstalowania:
+     $ dotnet tool uninstall -g <packagename>
+ 
+   Aby wyświetlić wszystkie narzędzia globalnej aktualnie jest zainstalowana na komputerze, wraz z ich wersji i poleceń, użyj lista narzędzi dotnet polecenia:
+     $ dotnet tool list -g
+ 
+  
+ ------------------------------------------
+  Required assets to build and debug are missing from 'mvc-filmy'. Add them? Click Yes.
+  
+ ------------------------------------------
+  4.38: Create Project
+    $ mkdir SammysAuto
+    $ cd SammysAuto\
+   $ dotnet new mvc
+  
+  
+ ------------------------------------------
+  4.37: Introduction to Project 3
+  Instruction from: 
+    Scaffold Identity in ASP.NET Core projects
+    https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-2.1&tabs=netcore-cli
