@@ -1,0 +1,12 @@
+ ------------------------------------------
+ Required assets to build and debug are missing from 'mvc-filmy'. Add them? Click Yes.
+ 
+ ------------------------------------------
+ 4.38: Create Project
+   $ mkdir SammysAuto
+   $ cd SammysAuto\
+   $ dotnet new mvc --auth Individual
+ 
+ 
+ ------------------------------------------
+ 4.37: Introduction to Project 3
