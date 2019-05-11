@@ -1,4 +1,79 @@
 ------------------------------------------
+------------------------------------------
+
+
+------------------------------------------
+Create full identity UI source
+  To maintain full control of the Identity UI, run the Identity scaffolder and select Override all files.
+    $ dotnet aspnet-codegenerator identity --force
+
+  The following highlighted code shows the changes to replace the default Identity UI with Identity 
+  in an ASP.NET Core 2.1 web app. You might want to do this to have full control of the Identity UI.
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.Configure<CookiePolicyOptions>(options =>
+        {
+            options.CheckConsentNeeded = context => true;
+            options.MinimumSameSitePolicy = SameSiteMode.None;
+        });
+
+        services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddIdentity<IdentityUser, IdentityRole>()
+            // services.AddDefaultIdentity<IdentityUser>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
+
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
+            .AddRazorPagesOptions(options =>
+            {
+                options.AllowAreas = true;
+                options.Conventions.AuthorizeAreaFolder("Identity", "/Account/Manage");
+                options.Conventions.AuthorizeAreaPage("Identity", "/Account/Logout");
+            });
+
+        services.ConfigureApplicationCookie(options =>
+        {
+            options.LoginPath = $"/Identity/Account/Login";
+            options.LogoutPath = $"/Identity/Account/Logout";
+            options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+        });
+
+        // using Microsoft.AspNetCore.Identity.UI.Services;
+        services.AddSingleton<IEmailSender, EmailSender>();
+    }
+
+    The default Identity is replaced in the following code:
+      services.AddIdentity<IdentityUser, IdentityRole>()
+          // services.AddDefaultIdentity<IdentityUser>()
+          .AddEntityFrameworkStores<ApplicationDbContext>()
+          .AddDefaultTokenProviders();
+
+    The following the code sets the LoginPath, LogoutPath, and AccessDeniedPath:
+      services.ConfigureApplicationCookie(options =>
+      {
+          options.LoginPath = $"/Identity/Account/Login";
+          options.LogoutPath = $"/Identity/Account/Logout";
+          options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+      });
+
+    Register an IEmailSender implementation, for example:
+      // using Microsoft.AspNetCore.Identity.UI.Services;
+      services.AddSingleton<IEmailSender, EmailSender>();
+
+      public class EmailSender : IEmailSender
+      {
+          public Task SendEmailAsync(string email, string subject, string message)
+          {
+              return Task.CompletedTask;
+          }
+      }
+
+
+
+------------------------------------------
 Scaffold identity into an MVC project without existing authorization:
   https://docs.microsoft.com/en-us/aspnet/core/security/authentication/scaffold-identity?view=aspnetcore-2.1&tabs=netcore-cli
   
