@@ -1,11 +1,13 @@
 
 ------------------------------------------
 ------------------------------------------
+
 ------------------------------------------
 5.40. Add Service Type Model 03:28
 5.41. Service Type - Create and Index Action 05:51
 5.42. Service Type - Index View 05:00
 5.43. Individual Button Partial View 
+5.44: Table Button Partial View
 
 ------------------------------------------
 bhrugen: 4.39:  Use custom user data to Identity
