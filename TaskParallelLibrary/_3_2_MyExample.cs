@@ -59,7 +59,7 @@ namespace TaskParallelLibrary
       Console.WriteLine("Processed {0} int count.", consumer.Result);
     }
     /* Output:
-      Processed 102400 bytes.
+      Processed 45 count.
     */
 
   }

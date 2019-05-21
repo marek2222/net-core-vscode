@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks.Dataflow;
 
-namespace TaskParallelLibrary
+namespace TaskParallelLibrary._1_Dataflow
 {
   public class _1_11_BatchedJoinBlock_T1T2andMore
   {

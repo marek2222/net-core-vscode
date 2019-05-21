@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using TaskParallelLibrary._1_Dataflow;
 
 namespace TaskParallelLibrary
 {
@@ -19,13 +20,43 @@ namespace TaskParallelLibrary
       // https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/dataflow-task-parallel-library#predefined-dataflow-block-types
       // _1_Dataflow();
 
+      // How to: Write Messages to and Read Messages from a Dataflow Block
+      // https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/how-to-write-messages-to-and-read-messages-from-a-dataflow-block
+      _2_WriteReadMessages();
+
       // How to: Implement a Producer-Consumer Dataflow Pattern
       // https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/how-to-implement-a-producer-consumer-dataflow-pattern
-      _3_Producer_Consumer();
+      //_3_Producer_Consumer();
 
     }
 
-    private static void _3_Producer_Consumer()
+    public static void _2_WriteReadMessages()
+    {
+      linia();
+      linia();
+      linia("How to: Write Messages to and Read Messages from a Dataflow Block");
+      linia("https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/how-to-write-messages-to-and-read-messages-from-a-dataflow-block");
+      linia();
+
+
+      linia("Writing to and Reading from a Dataflow Block Synchronously");
+      _2_1_Example _2_1 = new _2_1_Example();
+      _2_1.Run();
+      linia("-----------------------------------");
+
+      linia("Dla wielu konsumentów jednocześnie używaj TryReceive");
+      _2_2_Example _2_2 = new _2_2_Example();
+      _2_2.Run();
+      linia("-----------------------------------");
+
+      linia("Jednoczesny odczyt i zapis");
+      _2_3_Example _2_3 = new _2_3_Example();
+      _2_3.Run();
+      linia("-----------------------------------");
+
+    }
+
+    public static void _3_Producer_Consumer()
     {
       linia();
       linia();
@@ -40,6 +71,11 @@ namespace TaskParallelLibrary
       _3_2_MyExample _3_2 = new _3_2_MyExample();
       _3_2.Run();
       linia("-----------------------------------");
+
+      _3_3_MoreCustomers _3_3 = new _3_3_MoreCustomers();
+      _3_3.Run() ;
+      linia("-----------------------------------");
+
 
     }
 

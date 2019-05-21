@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
-namespace TaskParallelLibrary
+namespace TaskParallelLibrary._1_Dataflow
 {
   public class _1_6_ActionBlock
   {
