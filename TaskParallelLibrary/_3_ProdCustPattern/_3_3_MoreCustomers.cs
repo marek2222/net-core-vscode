@@ -2,7 +2,7 @@ using System;
 using System.Threading.Tasks;
 using System.Threading.Tasks.Dataflow;
 
-namespace TaskParallelLibrary
+namespace TaskParallelLibrary._3_ProdCustPattern
 {
   public class _3_3_MoreCustomers
   {

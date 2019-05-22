@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using TaskParallelLibrary._1_Dataflow;
+using TaskParallelLibrary._2_WriteRead;
+using TaskParallelLibrary._3_ProdCustPattern;
 
 namespace TaskParallelLibrary
 {
@@ -54,6 +56,16 @@ namespace TaskParallelLibrary
       _2_3.Run();
       linia("-----------------------------------");
 
+      linia("Odczyt i zapis asynchroniczny");
+      _2_4_Asynch _2_4 = new _2_4_Asynch();
+      _2_4.RunAsync();
+      linia("-----------------------------------");
+
+      _2_5_Asynch _2_5 = new _2_5_Asynch();
+      _2_5.Run();
+      linia("-----------------------------------");
+
+
     }
 
     public static void _3_Producer_Consumer()
@@ -81,7 +93,7 @@ namespace TaskParallelLibrary
 
 
 
-    private static void _1_Dataflow()
+    public static void _1_Dataflow()
     {
 
       linia("Dataflow (Task Parallel Library)");

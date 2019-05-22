@@ -1,7 +1,7 @@
 using System;
 using System.Threading.Tasks.Dataflow;
 
-namespace TaskParallelLibrary
+namespace TaskParallelLibrary._2_WriteRead
 {
   public class _2_1_Example
   {
