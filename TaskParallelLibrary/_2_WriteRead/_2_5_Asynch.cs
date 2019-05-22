@@ -28,7 +28,7 @@ namespace TaskParallelLibrary._2_WriteRead
 
       // Demonstrate asynchronous dataflow operations.
       AsyncSendReceive(bufferBlock).Wait();
-
+      
       /* Output:
          0
          1
