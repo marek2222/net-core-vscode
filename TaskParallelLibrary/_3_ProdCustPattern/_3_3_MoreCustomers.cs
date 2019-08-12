@@ -17,6 +17,7 @@ namespace TaskParallelLibrary._3_ProdCustPattern
       for (int i = 0; i < 10; i++)
       {
         target.Post(i);
+        System.Console.WriteLine("Producent: " + i.ToString());
       }
       target.Complete();
     }
@@ -32,6 +33,7 @@ namespace TaskParallelLibrary._3_ProdCustPattern
         while (zrodlo.TryReceive(out dane))
         {
           przetworzoneBloki += dane;    // Przetwórz bloki.
+          System.Console.WriteLine("przetworzoneBloki: " + przetworzoneBloki.ToString());
         }
       }
       return przetworzoneBloki;

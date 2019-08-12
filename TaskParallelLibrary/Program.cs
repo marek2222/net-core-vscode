@@ -24,13 +24,42 @@ namespace TaskParallelLibrary
 
       // How to: Write Messages to and Read Messages from a Dataflow Block
       // https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/how-to-write-messages-to-and-read-messages-from-a-dataflow-block
-      _2_WriteReadMessages();
+      //_2_WriteReadMessages();
 
       // How to: Implement a Producer-Consumer Dataflow Pattern
       // https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/how-to-implement-a-producer-consumer-dataflow-pattern
-      //_3_Producer_Consumer();
+      _3_Producer_Consumer();
 
     }
+
+    public static void _3_Producer_Consumer()
+    {
+      linia();
+      linia();
+      linia("How to: Implement a Producer-Consumer Dataflow Pattern");
+      linia("https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/how-to-implement-a-producer-consumer-dataflow-pattern");
+      linia();
+
+      _3_1_Example _3_1 = new _3_1_Example();
+      _3_1.Run();
+      linia("-----------------------------------");
+
+      _3_2_MyExample _3_2 = new _3_2_MyExample();
+      _3_2.Run();
+      linia("-----------------------------------");
+
+      _3_3_MoreCustomers _3_3 = new _3_3_MoreCustomers();
+      _3_3.Run() ;
+      linia("-----------------------------------");
+
+      // for visual studio 2015 and .NET framework 4.5 
+      // _3_4_CodeProject_AmeetParse _3_4 = new _3_4_CodeProject_AmeetParse();
+      // _3_4.Run() ;
+      // linia("-----------------------------------");
+
+
+    }
+
 
     public static void _2_WriteReadMessages()
     {
@@ -67,30 +96,6 @@ namespace TaskParallelLibrary
 
 
     }
-
-    public static void _3_Producer_Consumer()
-    {
-      linia();
-      linia();
-      linia("How to: Implement a Producer-Consumer Dataflow Pattern");
-      linia("https://docs.microsoft.com/pl-pl/dotnet/standard/parallel-programming/how-to-implement-a-producer-consumer-dataflow-pattern");
-      linia();
-
-      _3_1_Example _3_1 = new _3_1_Example();
-      _3_1.Run();
-      linia("-----------------------------------");
-
-      _3_2_MyExample _3_2 = new _3_2_MyExample();
-      _3_2.Run();
-      linia("-----------------------------------");
-
-      _3_3_MoreCustomers _3_3 = new _3_3_MoreCustomers();
-      _3_3.Run() ;
-      linia("-----------------------------------");
-
-
-    }
-
 
 
     public static void _1_Dataflow()
