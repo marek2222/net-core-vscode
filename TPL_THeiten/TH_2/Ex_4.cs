@@ -36,6 +36,10 @@ namespace TH_2
         ["stop1"]  = Stopping.Stop1,
         ["stop2"]  = Stopping.Stop2,
         ["stop3"]  = Stopping.Stop3,
+        ["stop4"]  = Stopping.Stop4,
+        ["join1"]  = Joining.Join1,
+        ["back1"]  = background.Block1,
+        ["back2"]  = background.Block2,
       };
     }
 

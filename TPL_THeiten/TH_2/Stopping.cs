@@ -54,5 +54,24 @@ namespace TH_2
 			return;
     }
 
+    public static void Stop4()
+    {
+      var thread = new Thread(() =>
+      {
+        while (!ShouldStop)
+        {
+          System.Console.WriteLine("still not stopped yet");
+        }
+      });
+			thread.Start();
+
+			bool runToCompiletion = thread.Join(100);
+			ShouldStop = !runToCompiletion;
+
+      string threadState =
+        thread.ThreadState == ThreadState.Stopped ? "stopped" : "running";
+      System.Console.WriteLine($"we can tell by the thread state: {threadState}");
+    }
+
   }
 }
