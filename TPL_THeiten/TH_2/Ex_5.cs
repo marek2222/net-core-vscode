@@ -26,13 +26,12 @@ namespace TH_2
 
     private Dictionary<string, Action> s_runner;
 
-    public Ex_4()
+    public Ex_5()
     {
       s_runner = new Dictionary<string, Action>{
-        ["start1"] = Starting.Start1,
-        ["start2"] = Starting.Start2,
-        ["start3"] = Starting.Start3,
-        ["start4"] = Starting.Start4,
+        ["stop1"]  = Stopping.Stop1,
+        ["stop2"]  = Stopping.Stop2,
+        ["stop3"]  = Stopping.Stop3,
       };
     }
 

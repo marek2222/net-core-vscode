@@ -17,7 +17,7 @@ namespace TH_2
 
     private static void CallExample5(string[] args)
     {
-      System.Console.WriteLine("You can use it args from: 'start1' to 'start4'.");
+      System.Console.WriteLine("You can use it args: 'stop1'.");
       new Ex_5().Run_1(args);
     }
     
