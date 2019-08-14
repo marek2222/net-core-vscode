@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace TH_2
 {
-  public class Ex_4
+  public class Ex_5
   {
 
     /////////////////////////  
-    /// 4_1  
+    /// 5_1  
     public void Run_1(string[] args)
     {
       string key = string.Empty;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace TH_2
 {
@@ -9,20 +10,33 @@ namespace TH_2
 
     static void Main(string[] args)
     {
+      CallExample5(args);
+      //CallExample4(args);
+      //CallExample3();
+    }
 
+    private static void CallExample5(string[] args)
+    {
+      System.Console.WriteLine("You can use it args from: 'start1' to 'start4'.");
+      new Ex_5().Run_1(args);
+    }
+    
+    private static void CallExample4(string[] args)
+    {
+      System.Console.WriteLine("You can use it args from: 'start1' to 'start4'.");
+      new Ex_4().Run_1(args);
+    }
 
-
- 		  /////////////////////////  
- 			/// Examples with section 3
-		
-			//Ex_3 example3 = new Ex_3();
-			//example3.RunStatic_1();
-		  new Ex_3().RunStatic_1();
-			NewLine();
-			new Ex_3().RunStatic_2();
-			NewLine();
-			new Ex_3().RunStatic_3();
-			NewLine();
+    private static void CallExample3()
+    {
+      //Ex_3 example3 = new Ex_3();
+      //example3.RunStatic_1();
+      new Ex_3().RunStatic_1();
+      NewLine();
+      new Ex_3().RunStatic_2();
+      NewLine();
+      new Ex_3().RunStatic_3();
+      NewLine();
       //Console.ReadKey();
     }
 
@@ -30,5 +44,15 @@ namespace TH_2
     {
       System.Console.WriteLine();
     }
+
+    // static  Program()
+    // {
+    //   s_runner = new Dictionary<string, Action>
+    //   {
+    //     ["start"] = Starting.Start
+    //   };
+    // }
+
+    // private static Dictionary<string, Action> s_runner;
   }
 }
