@@ -34,7 +34,7 @@ namespace TH_2
       {
         while (!ShouldStop)
         {
-          System.Console.WriteLine("still not stpped yet");
+          System.Console.WriteLine("still not stopped yet");
           Thread.Sleep(200);
         }
       }).Start();

@@ -10,20 +10,14 @@ namespace TH_2
 
     static void Main(string[] args)
     {
-      CallExample5(args);
-      //CallExample4(args);
+      //Example for section 4,5
+      CallExample4(args);
       //CallExample3();
     }
 
-    private static void CallExample5(string[] args)
-    {
-      System.Console.WriteLine("You can use it args: 'stop1'.");
-      new Ex_5().Run_1(args);
-    }
-    
     private static void CallExample4(string[] args)
     {
-      System.Console.WriteLine("You can use it args from: 'start1' to 'start4'.");
+      System.Console.WriteLine("You can use it args from: 'start1' to 'start4', 'stop1' to 'stop3'.");
       new Ex_4().Run_1(args);
     }
 
