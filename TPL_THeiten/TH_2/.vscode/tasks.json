@@ -7,8 +7,8 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/_2_ThreadsInNet.csproj",
-                "/property:GenerateFullPaths=true",
+                "${workspaceFolder}/TH_2.csproj",
+                "/property:GenerateFullPaTH_2s=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
@@ -19,8 +19,8 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/_2_ThreadsInNet.csproj",
-                "/property:GenerateFullPaths=true",
+                "${workspaceFolder}/TH_2.csproj",
+                "/property:GenerateFullPaTH_2s=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
@@ -32,8 +32,8 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/_2_ThreadsInNet.csproj",
-                "/property:GenerateFullPaths=true",
+                "${workspaceFolder}/TH_2.csproj",
+                "/property:GenerateFullPaTH_2s=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"

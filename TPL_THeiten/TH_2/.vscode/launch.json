@@ -1,7 +1,7 @@
 {
    // Use IntelliSense to find out which attributes exist for C# debugging
-   // Use hover for the description of the existing attributes
-   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
+   // Use hover for TH_2e description of TH_2e existing attributes
+   // For furTH_2er information visit https://giTH_2ub.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
    "version": "0.2.0",
    "configurations": [
         {
@@ -9,8 +9,8 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/_2_ThreadsInNet.dll",
+            // If you have changed target frameworks, make sure to update TH_2e program paTH_2.
+            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/TH_2.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
