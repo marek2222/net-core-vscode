@@ -40,6 +40,7 @@ namespace TH_2
         ["join1"]  = Joining.Join1,
         ["back1"]  = background.Block1,
         ["back2"]  = background.Block2,
+        ["signal"]  = code.Signal.Run,
       };
     }
 
