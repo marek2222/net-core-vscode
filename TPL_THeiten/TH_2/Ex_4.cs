@@ -41,17 +41,19 @@ namespace TH_2
         ["back1"]  = thread_api.background.Block1,
         ["back2"]  = thread_api.background.Block2,
         ["signal"] = thread_api.Signal.Run,
+        ["error"]  = thread_api.Error.Handle,
       };
     }
 
     public void ShowArgs()
     {
+      System.Console.WriteLine();
       System.Console.WriteLine("Write one of following parameter: ");
       foreach (var item in s_runner)
       {
           System.Console.WriteLine("  "+ item.Key);
           if (item.Key == "signal")
-            System.Console.WriteLine(" Show big difference between AutoReset and ManualReset EventWaitHandle: ./Threading/EventWaitHandle1/EventWaitHandle1.csproj"); 
+            System.Console.WriteLine("   - show also EventWaitHandle: ./Threading/EventWaitHandle1/EventWaitHandle1.csproj"); 
       }
     }
   }
