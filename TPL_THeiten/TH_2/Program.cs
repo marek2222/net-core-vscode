@@ -10,15 +10,18 @@ namespace TH_2
 
     static void Main(string[] args)
     {
-      //Example for section 4,5
+      //Example for section 4,5,6
       CallExample4(args);
       //CallExample3();
     }
-
+    
     private static void CallExample4(string[] args)
     {
-      System.Console.WriteLine("You can use it args from: 'start1' to 'start4', 'stop1' to 'stop3'.");
-      new Ex_4().Run_1(args);
+      Ex_4 example = new Ex_4();
+      example.ShowArgs();
+      example.Run_1(args);
+
+      // new Ex_4().Run_1(args);
     }
 
     private static void CallExample3()
@@ -31,22 +34,11 @@ namespace TH_2
       NewLine();
       new Ex_3().RunStatic_3();
       NewLine();
-      //Console.ReadKey();
     }
 
     private static void NewLine()
     {
       System.Console.WriteLine();
     }
-
-    // static  Program()
-    // {
-    //   s_runner = new Dictionary<string, Action>
-    //   {
-    //     ["start"] = Starting.Start
-    //   };
-    // }
-
-    // private static Dictionary<string, Action> s_runner;
   }
 }

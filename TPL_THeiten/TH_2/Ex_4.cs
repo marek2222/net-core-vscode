@@ -44,5 +44,13 @@ namespace TH_2
       };
     }
 
+    public void ShowArgs()
+    {
+      System.Console.WriteLine("Write one of following parameter: ");
+      foreach (var item in s_runner)
+      {
+          System.Console.WriteLine("  "+ item.Key);
+      }
+    }
   }
 }

@@ -1,0 +1,5 @@
+How to run projects:
+
+dotnet run -p TH_2\TH_2.csproj -a signal
+dotnet run -p Threading\EventWaitHandle1\EventWaitHandle1.csproj
+
