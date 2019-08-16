@@ -42,6 +42,8 @@ namespace TH_2
         ["back2"]  = thread_api.background.Block2,
         ["signal"] = thread_api.Signal.Run,
         ["error"]  = thread_api.Error.Handle,
+        ["pool1"]  = thread_api.Pool.Pooling1,
+        ["pool2"]  = thread_api.Pool.Pooling2,
       };
     }
 
@@ -55,6 +57,7 @@ namespace TH_2
           if (item.Key == "signal")
             System.Console.WriteLine("   - show also EventWaitHandle: ./Threading/EventWaitHandle1/EventWaitHandle1.csproj"); 
       }
+      System.Console.WriteLine();
     }
   }
 }
