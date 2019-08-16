@@ -29,18 +29,18 @@ namespace TH_2
     public Ex_4()
     {
       s_runner = new Dictionary<string, Action>{
-        ["start1"] = Starting.Start1,
-        ["start2"] = Starting.Start2,
-        ["start3"] = Starting.Start3,
-        ["start4"] = Starting.Start4,
-        ["stop1"]  = Stopping.Stop1,
-        ["stop2"]  = Stopping.Stop2,
-        ["stop3"]  = Stopping.Stop3,
-        ["stop4"]  = Stopping.Stop4,
-        ["join1"]  = Joining.Join1,
-        ["back1"]  = background.Block1,
-        ["back2"]  = background.Block2,
-        ["signal"]  = code.Signal.Run,
+        ["start1"] = thread_api.Starting.Start1,
+        ["start2"] = thread_api.Starting.Start2,
+        ["start3"] = thread_api.Starting.Start3,
+        ["start4"] = thread_api.Starting.Start4,
+        ["stop1"]  = thread_api.Stopping.Stop1,
+        ["stop2"]  = thread_api.Stopping.Stop2,
+        ["stop3"]  = thread_api.Stopping.Stop3,
+        ["stop4"]  = thread_api.Stopping.Stop4,
+        ["join1"]  = thread_api.Joining.Join1,
+        ["back1"]  = thread_api.background.Block1,
+        ["back2"]  = thread_api.background.Block2,
+        ["signal"] = thread_api.Signal.Run,
       };
     }
 
@@ -50,6 +50,8 @@ namespace TH_2
       foreach (var item in s_runner)
       {
           System.Console.WriteLine("  "+ item.Key);
+          if (item.Key == "signal")
+            System.Console.WriteLine(" Show big difference between AutoReset and ManualReset EventWaitHandle: ./Threading/EventWaitHandle1/EventWaitHandle1.csproj"); 
       }
     }
   }

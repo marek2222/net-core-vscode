@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using static System.Console;
 
-namespace code
+namespace TH_2.thread_api
 {
   internal class Signal
   {
