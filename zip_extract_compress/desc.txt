@@ -1,0 +1,14 @@
+How to: Compress and extract files
+https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-compress-and-extract-files#example-1-create-and-extract-a-zip-file
+
+
+The System.IO.Compression namespace contains the following types for compressing and decompressing files and streams. You can also use these types to read and modify the contents of a compressed file.
+
+    ZipFile
+    ZipArchive
+    ZipArchiveEntry
+    DeflateStream
+    GZipStream
+
+The following examples show some of the operations you can perform with compressed files.
+
