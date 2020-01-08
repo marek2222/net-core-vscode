@@ -1,0 +1,2 @@
+Woj.	Województwo	Pow	Powiat	Gmi	Gmina	Miejsco	Miejscowosc	Kod_p	Ulic	Ulica	Nr_bud					
+							

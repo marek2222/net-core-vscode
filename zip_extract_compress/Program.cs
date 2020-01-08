@@ -1,12 +1,14 @@
 ﻿using System;
+using System.IO.Compression;
+using zip_extract_compress._zip;
 
 namespace zip_extract_compress
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+      _1_Compress_and_extract_files _1 = new _1_Compress_and_extract_files();
     }
+  }
 }
