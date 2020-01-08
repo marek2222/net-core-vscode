@@ -8,20 +8,19 @@ namespace TH_2.thread_api
 
     int GetResult(int input) => input *2;
     
-    int _current;
+    static int _current;
 
     #region Method Pair
-    IAsyncResult BeginAsync(int input, out int result, AsyncCallback callback, object state) 
+    static IAsyncResult BeginAsync(int input, out int result, AsyncCallback callback, object state) 
     {
       result = input;
       _current = input *2;
       if (callback != null)
-      {
           callback.Invoke(new MyAsyncResult(state));
-      }
+      return null;
     }
 
-    int EndAsync(out int result, IAsyncResult var) 
+    static int EndAsync(out int result, IAsyncResult var) 
     {
       result = _current;
       return _current;
@@ -29,7 +28,7 @@ namespace TH_2.thread_api
     #endregion
 
     #region Callback and Completion
-    public void DemonstratePooling()
+    public static void DemonstratePooling()
     {
       IAsyncResult iar = BeginAsync(42, out int result, null,null);
       var timer = new Timer((cb)=> 
@@ -44,7 +43,6 @@ namespace TH_2.thread_api
           }
           catch (System.Exception)
           {
-              
               throw;
           }
         }
@@ -54,16 +52,15 @@ namespace TH_2.thread_api
     }
 
     public void DemonstrateNotification()
-    {
-      BeginAsync(22, out int result, new AsyncCallback(Callback), "MyState");
-    }
+      => BeginAsync(22, out int result, new AsyncCallback(Callback), "myState");
+    
 
     private void Callback(IAsyncResult iar)
     {
       // do something here
       try
       {
-          int result = EndAsync(out int outputm, iar);
+          int result = EndAsync(out int output, iar);
           System.Console.WriteLine(result);
           System.Console.WriteLine(iar.AsyncState.ToString());
       }

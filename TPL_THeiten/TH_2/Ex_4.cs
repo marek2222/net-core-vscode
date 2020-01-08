@@ -28,6 +28,7 @@ namespace TH_2
 
     public Ex_4()
     {
+
       s_runner = new Dictionary<string, Action>{
         ["start1"] = thread_api.Starting.Start1,
         ["start2"] = thread_api.Starting.Start2,
@@ -44,6 +45,7 @@ namespace TH_2
         ["error"]  = thread_api.Error.Handle,
         ["pool1"]  = thread_api.Pool.Pooling1,
         ["pool2"]  = thread_api.Pool.Pooling2,
+        ["apm"]    = thread_api.APM.DemonstratePooling,
       };
     }
 
