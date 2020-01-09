@@ -68,8 +68,8 @@ namespace zip_extract_compress._zip
 
       // Ensures that the last character on the extraction path
       // is the directory separator char. 
-      // Without this, a malicious zip file could try to traverse outside of the expected
-      // extraction path.
+      // Without this, a malicious zip file could try to traverse outside 
+      // of the expected extraction path.
       if (!extractPath.EndsWith(Path.DirectorySeparatorChar.ToString(), StringComparison.Ordinal))
         extractPath += Path.DirectorySeparatorChar;
 

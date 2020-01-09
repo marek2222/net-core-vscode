@@ -9,6 +9,7 @@ namespace zip_extract_compress
     static void Main(string[] args)
     {
       _1_Compress_and_extract_files _1 = new _1_Compress_and_extract_files();
+      _2_Compose_streams _2 = new _2_Compose_streams();
     }
   }
 }
